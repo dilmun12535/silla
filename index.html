@@ -1,43 +1,21 @@
 <html>
 <head>
-<title>카카오톡 버튼있는 메시지 전송하기</title>
-<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>카톡 공유</title>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
-<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
-<a id="kakao-link-btn" href="javascript:sendLink()">
-  <img
-    src="http://k.kakaocdn.net/dn/beYrbr/btrUndcTBj9/NB9YIaTSHuCc98f1Ltkszk/kakaolink40_original.jpg"
-  />
-</a>
+    <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+    <input type="button" onClick="sendLinkDefault();" value="Default"/>
+
 <script type="text/javascript">
- Kakao.init('f95b8e0cc04a3c4f9ebab06526a09608');
-  function sendLink() {
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '(신나는 신라)등록자 안내사항을  확인하세요.',
-        description: '최종등록, 정부장학금, 교내장학금, 기숙사, 통학버스, 입학식, 수강신청',
-        imageUrl:
-          'http://k.kakaocdn.net/dn/beYrbr/btrUndcTBj9/NB9YIaTSHuCc98f1Ltkszk/kakaolink40_original.jpg',
-        link: {
-          mobileWebUrl: 'http://k.kakaocdn.net/dn/beYrbr/btrUndcTBj9/NB9YIaTSHuCc98f1Ltkszk/kakaolink40_original.jpg',
-          webUrl: 'http://k.kakaocdn.net/dn/beYrbr/btrUndcTBj9/NB9YIaTSHuCc98f1Ltkszk/kakaolink40_original.jpg',
-        },
-      },
-      buttons: [
-        {
-          title: '신입생 안내사항',
-          link: {
-            mobileWebUrl: 'https://ipsi.silla.ac.kr/ipsi/index.php?pCode=inotice&mode=view&idx=1421',
-            webUrl: 'https://ipsi.silla.ac.kr/ipsi/index.php?pCode=inotice&mode=view&idx=1421',
-          },
-        },
-      ],
-    })
-  }
+    function sendLinkCustom() {
+        Kakao.init("f95b8e0cc04a3c4f9ebab06526a09608");
+        Kakao.Link.sendCustom({
+            templateId: 87601
+        });
+    }
 </script>
-<!-- www.blackcats4567.com -->
-<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
-  </body>
+   
+</body>
 </html>
